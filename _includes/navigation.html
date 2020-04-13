@@ -1,0 +1,9 @@
+<nav id="main-navigation">
+  {% for item in site.data.links %}
+  {% if page.url == item.link %}
+  <a href="{{ item.link }}" title="{{ item.title }}" class="current-page">{{ item.title }}</a>
+  {% else %}
+  <a href="{{ item.link }}" title="{{ item.title }}">{{ item.title }}</a>
+  {% end if %}
+  {% endfor %}
+</nav>
