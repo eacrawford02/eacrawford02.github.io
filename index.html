@@ -8,6 +8,30 @@ title: Home
     {{% include head.html %}}
   </head>
   <body>
+    <main class="homepage">
 
+      {% for item in site.data.links %}
+      {% if item.title == "About" %}
+      {% assign about_page = item.url %}
+      {% endif %}
+      {% endfor %}
+
+      <div class="profile">
+        <a href="{{ about_page }}" id="page-link">
+          <h1>about</h1>
+        </a>
+      </div>
+
+      <div id="navigation">
+        {% for item in site.data.links %}
+        {% if item.url != page.url and item.url != about_page %}
+        <a href="{{ item.url }}" title="{{ item.title }}" class="page-links">
+          {{ item.title }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </main>
+    {{% include footer.html %}}
   </body>
 </html>

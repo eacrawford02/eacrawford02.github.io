@@ -1,2 +1,4 @@
 - title: Home
-  link: /
+  url: /
+- title: About
+  url: /pages/about.html
