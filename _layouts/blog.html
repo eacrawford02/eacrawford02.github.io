@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<main class="blog">
+  <h1 class="title">blog</h1>
+
+  <section class="post-list">
+    {% assign sorted_posts = site.posts | sort: "date" %}
+    {% assign counter = 0 %}
+
+    {% for post in sorted_posts %}
+    {% if counter == sorted_posts.size %}
+    <div class="new-year">
+      <h2>{{ post.date | date: "%Y" }}</h2>
+      <a href="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+        {{ post.date | date: "%-d %B" }}
+      </time>
+    </div>
+    {% else %}
+    {% increment counter %}
+    {% assign current_year = post.date | date: "%Y" %}
+    {% assign next_year = sorted_posts[counter] %}
+    {% if current_year != next_year %}
+    <div class="new-year">
+      <h2>{{ post.date | date: "%Y" }}</h2>
+      <a href="{{ post.url | remove_first: '/' }}"></a>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+        {{ post.date | date: "%-d %B" }}
+      </time>
+    </div>
+    {% else %}
+    <div class="current-year">
+      <a href="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+        {{ post.date | date: "%-d %B" }}
+      </time>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </section>
+</main>
