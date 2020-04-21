@@ -1,6 +1,9 @@
 - name: Email
   link: mailto:eacrawford02@gmail.com
-- name: Github
-  link: github.com/eacrawford02
+  icon: far fa-envelope fa-fw
 - name: Instagram
-  link: instagram.com/eacrawford02/
+  link: https://www.instagram.com/eacrawford02/
+  icon: fab fa-instagram fa-fw
+- name: Github
+  link: https://github.com/eacrawford02
+  icon: fab fa-github fa-fw

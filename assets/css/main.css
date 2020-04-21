@@ -1,0 +1,188 @@
+/*
+=============================================================================
+Global Styles
+=============================================================================
+*/
+
+@font-face {
+    font-family: 'crimson_textregular';
+    src: url('../fonts/crimsontext-regular-webfont.woff2') format('woff2'),
+         url('../fonts/crimsontext-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'crimson_textregular', serif;
+  font-size: 1rem;
+  color: #303030;
+  background-image: url("../images/background.jpg");
+  background-repeat: repeat;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6, .page-links {
+  font-family: 'open_sansregular', sans-serif;
+}
+
+a {
+  color: #568203;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8fbe36;
+}
+
+/*
+=============================================================================
+Homepage
+=============================================================================
+*/
+
+main.homepage {
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+main.homepage > .profile {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border: 5px solid #303030;
+  border-radius: 125px;
+  background-image: url("../images/profile.jpg");
+  background-position: center;
+  background-size: 100%;
+  transition: all ease-in-out 0.5s;
+}
+
+main.homepage > .profile:hover {
+  background-size: 125%;
+}
+
+main.homepage > .profile #page-link {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(50% - 5px);
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.5s;
+}
+
+main.homepage > .profile #page-link:hover {
+  background: rgba(89, 89, 89, 0.5);
+  color: #E4DDDD;
+}
+
+main.homepage #navigation {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+main.homepage #navigation > .page-links {
+  display: block;
+  flex-basis: 15%;
+  padding: 1rem;
+  border: 3px solid #303030;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  text-align: center;
+  color: #303030;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.5s;
+}
+
+main.homepage #navigation > .page-links:hover {
+  background-color: #303030;
+  color: #E4DDDD;
+}
+
+/*
+=============================================================================
+Header & Navigation
+=============================================================================
+*/
+
+/*
+=============================================================================
+Blog
+=============================================================================
+*/
+
+/*
+=============================================================================
+Footer
+=============================================================================
+*/
+
+footer {
+  font-family: 'open_sansregular', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .external-links > a {
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #303030;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer .external-links > a:hover {
+  color: #595959;
+}
+
+footer > #message {
+  font-size: 0.75rem;
+  color: #595959;
+}
+
+main.homepage > footer .external-links > a {
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 40px;
+  color: #303030;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all ease-in-out 0.5s;
+}
+
+main.homepage > footer .external-links > a:hover {
+  background-color: #303030;
+  color: #E4DDDD;
+}
+
+main.homepage > footer #message {
+  font-size: 1rem;
+  color: #595959;
+}

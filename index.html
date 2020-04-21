@@ -4,6 +4,12 @@ title: Home
 
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+<style media="screen">
+  a {
+    color: transparent;
+  }
+  <!-- needed to fix the  about link transition from flashing purple -->
+</style>
   <head>
     {% include head.html %}
   </head>
@@ -31,7 +37,9 @@ title: Home
         {% endif %}
         {% endfor %}
       </div>
+      <footer>
+        {% include footer.html %}
+      </footer>
     </main>
-    {% include footer.html %}
   </body>
 </html>

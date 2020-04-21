@@ -1,8 +1,9 @@
 <div class="external-links">
 {% for item in site.data.external-links %}
 <a href="{{ item.link }}" title="{{ item.name }}">
+  <i class="{{ item.icon }}"></i>
 </a>
 {% endfor %}
 </div>
 
-<p>Made by me. <3</p>
+<p id="message">Made by me. <3</p>
