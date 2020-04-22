@@ -1,9 +1,10 @@
 ---
 layout: default
+title: Blog
 ---
 
 <main class="blog">
-  <h1 class="title">blog</h1>
+  <h1 class="title">{{ page.title }}</h1>
 
   <section class="post-list">
     {% assign sorted_posts = site.posts | sort: "date" | reverse %}
@@ -13,10 +14,12 @@ layout: default
     {% if counter == sorted_posts.size %}
     <div class="new-year">
       <h2>{{ post.date | date: "%Y" }}</h2>
-      <a href="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-        {{ post.date | date: "%-d %B" }}
-      </time>
+      <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
+      <div class="date">
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+          <h3>{{ post.date | date: "%-d %B" }}</h3>
+        </time>
+      </div>
     </div>
     {% else %}
     {% assign counter = counter | plus: 1 %}
@@ -25,17 +28,21 @@ layout: default
     {% if current_year != next_year %}
     <div class="new-year">
       <h2>{{ post.date | date: "%Y" }}</h2>
-      <a href="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-        {{ post.date | date: "%-d %B" }}
-      </time>
+      <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
+      <div class="date">
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+          <h3>{{ post.date | date: "%-d %B" }}</h3>
+        </time>
+      </div>
     </div>
     {% else %}
     <div class="current-year">
-      <a href="{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-        {{ post.date | date: "%-d %B" }}
-      </time>
+      <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
+      <div class="date">
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+          <h3>{{ post.date | date: "%-d %B" }}</h3>
+        </time>
+      </div>
     </div>
     {% endif %}
     {% endif %}
