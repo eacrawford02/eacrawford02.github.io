@@ -1,19 +1,28 @@
 <nav id="main-navigation">
 
   {% for item in site.data.links %}
-  {% if item.title == "About" %}
-  {% assign about_page = item.url %}
+  {% if item.title == "Home" %}
+  {% assign home_page = item.url %}
+  {% endif %}
+  {% if item.title == "CV" %}
+  {% assign cv = item.url %}
   {% endif %}
   {% endfor %}
 
-  <a href="{{ about_page }}" title="About" id="profile"></a>
+  <a href="{{ home_page }}" title="Home" id="profile"></a>
   <div id="page-links">
     {% for item in site.data.links %}
-    {% if item.url != about_page %}
+    {% if item.url != home_page %}
     {% if page.url == item.url %}
     <a href="{{ item.url }}" title="{{ item.title }}" class="current-page">{{ item.title }}</a>
     {% else %}
+    {% if item.url == cv %}
+    <a href="{{ item.url }}" title="{{ item.title }}" target="_blank">
+      {{ item.title }}
+    </a>
+    {% else %}
     <a href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
+    {% endif %}
     {% endif %}
     {% endif %}
     {% endfor %}

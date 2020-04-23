@@ -76,12 +76,12 @@ main.homepage > .profile {
   border-radius: 125px;
   background-image: url("../images/profile.jpg");
   background-position: center;
-  background-size: 100%;
+  background-size: 135%;
   transition: all ease-in-out 0.5s;
 }
 
 main.homepage > .profile:hover {
-  background-size: 125%;
+  background-size: 160%;
 }
 
 main.homepage > .profile #page-link {
@@ -150,7 +150,7 @@ header > nav#main-navigation > #profile {
   margin-bottom: 0.5rem;
   background-image: url("../images/profile.jpg");
   background-position: center;
-  background-size: 100%;
+  background-size: 135%;
 }
 
 header > nav#main-navigation > #page-links {
@@ -216,9 +216,17 @@ main.blog > section.post-list > div.new-year {
   border-top: 1px solid #303030;
 }
 
+main.blog > section.post-list > div.current-year {
+  margin-top: -2rem;
+}
+
 main.blog > section.post-list > div > .date {
   display: block;
   flex-grow: 0;
+}
+
+main.blog > section.post-list > div.current-year > h2 {
+  visibility: hidden;
 }
 
 main.blog > section.post-list > div > a {

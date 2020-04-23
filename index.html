@@ -20,6 +20,9 @@ title: Home
       {% if item.title == "About" %}
       {% assign about_page = item.url %}
       {% endif %}
+      {% if item.title == "CV" %}
+      {% assign cv = item.url %}
+      {% endif %}
       {% endfor %}
 
       <div class="profile">
@@ -31,9 +34,15 @@ title: Home
       <div id="navigation">
         {% for item in site.data.links %}
         {% if item.url != page.url and item.url != about_page %}
+        {% if item.url == cv %}
+        <a href="{{ item.url }}" title="{{ item.title }}" class="page-links" target="_blank">
+          {{ item.title }}
+        </a>
+        {% else %}
         <a href="{{ item.url }}" title="{{ item.title }}" class="page-links">
           {{ item.title }}
         </a>
+        {% endif %}
         {% endif %}
         {% endfor %}
       </div>

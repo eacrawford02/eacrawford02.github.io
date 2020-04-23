@@ -8,10 +8,10 @@ title: Blog
 
   <section class="post-list">
     {% assign sorted_posts = site.posts | sort: "date" | reverse %}
-    {% assign counter = 1 %}
+    {% assign counter = -1 %}
 
     {% for post in sorted_posts %}
-    {% if counter == sorted_posts.size %}
+    {% if counter == -1 %}
     <div class="new-year">
       <h2>{{ post.date | date: "%Y" }}</h2>
       <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
@@ -22,10 +22,9 @@ title: Blog
       </div>
     </div>
     {% else %}
-    {% assign counter = counter | plus: 1 %}
     {% assign current_year = post.date | date: "%Y" %}
-    {% assign next_year = sorted_posts[counter] %}
-    {% if current_year != next_year %}
+    {% assign prev_year = sorted_posts[counter].date | date: "%Y" %}
+    {% if current_year != prev_year %}
     <div class="new-year">
       <h2>{{ post.date | date: "%Y" }}</h2>
       <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
@@ -37,6 +36,7 @@ title: Blog
     </div>
     {% else %}
     <div class="current-year">
+      <h2>{{ post.date | date: "%Y" }}</h2>
       <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
       <div class="date">
         <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
@@ -46,6 +46,7 @@ title: Blog
     </div>
     {% endif %}
     {% endif %}
+    {% assign counter = counter | plus: 1 %}
     {% endfor %}
   </section>
 </main>
