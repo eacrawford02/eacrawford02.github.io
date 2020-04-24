@@ -76,12 +76,12 @@ main.homepage > .profile {
   border-radius: 125px;
   background-image: url("../images/profile.jpg");
   background-position: center;
-  background-size: 135%;
+  background-size: 100%;
   transition: all ease-in-out 0.5s;
 }
 
 main.homepage > .profile:hover {
-  background-size: 160%;
+  background-size: 125%;
 }
 
 main.homepage > .profile #page-link {
@@ -150,7 +150,7 @@ header > nav#main-navigation > #profile {
   margin-bottom: 0.5rem;
   background-image: url("../images/profile.jpg");
   background-position: center;
-  background-size: 135%;
+  background-size: 100%;
 }
 
 header > nav#main-navigation > #page-links {
@@ -287,4 +287,115 @@ main.homepage > footer .external-links > a:hover {
 main.homepage > footer #message {
   font-size: 1rem;
   color: #595959;
+}
+
+/*
+=============================================================================
+Responsive Styling
+=============================================================================
+*/
+
+@media screen and (max-width: 600px) {
+  main {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  main.homepage {
+    height: 100vh;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main.homepage > .profile {
+    width: calc(50vw - 5px);
+    height: calc(50vw - 5px);
+    border: 5px solid #303030;
+    border-radius: 50vw;
+  }
+
+  main.homepage > .profile:hover {
+    background-size: 100%;
+  }
+
+  main.homepage > .profile #page-link {
+    width: calc(50vw - 5px);
+    height: calc(50vw - 5px);
+    border-radius: 50vw;
+    transition: none;
+  }
+
+  main.homepage #navigation {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  main.homepage #navigation > .page-links {
+    flex-basis: 15%;
+    padding: 1rem;
+    border: 3px solid #303030;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    transition: none;
+  }
+
+  main.homepage > footer .external-links > a {
+    flex-wrap: wrap;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+    transition: none;
+  }
+
+  main.homepage > footer #message {
+    font-size: 0.75rem;
+  }
+
+  header > nav#main-navigation {
+    flex-direction: column;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header > nav#main-navigation > #profile {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 12.5vw;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  header > nav#main-navigation > #page-links {
+    display: flex;
+    width: 100%;
+    font-size: 0.85rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header > nav#main-navigation > #page-links > a {
+    display: block;
+    flex-basis: 15%;
+    margin-top: 1rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 0.5rem;
+    border: 2px solid #303030;
+    border-radius: 0.4rem;
+    text-align: center;
+    color: #303030;
+    text-transform: uppercase;
+    transform: none !important;
+  }
+
+  header > nav#main-navigation > #page-links > a:hover {
+    background-color: #303030;
+    color: #E4DDDD;
+    border-bottom: none;
+  }
 }
