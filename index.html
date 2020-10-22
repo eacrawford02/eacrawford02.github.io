@@ -16,6 +16,17 @@ title: Home
   <body>
     <main class="homepage">
 
+      <div id="content">
+        <div id="text">
+          <h1 id="title">{{ site.title }}</h1>
+          <h3 id="message">>On the web!</h3>
+        </div>
+          <a id="button" href="#" title="Enter Site">
+            <h1>&#8626</h1>
+          </a>
+      </div>
+
+<!--
       {% for item in site.data.links %}
       {% if item.title == "About" %}
       {% assign about_page = item.url %}
@@ -49,6 +60,7 @@ title: Home
       <footer>
         {% include footer.html %}
       </footer>
+-->
     </main>
   </body>
 </html>

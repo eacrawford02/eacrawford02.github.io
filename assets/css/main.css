@@ -5,27 +5,33 @@ Global Styles
 */
 
 @font-face {
-    font-family: 'crimson_textregular';
-    src: url('../fonts/crimsontext-regular-webfont.woff2') format('woff2'),
-         url('../fonts/crimsontext-regular-webfont.woff') format('woff');
+    font-family: 'montserratregular';
+    src: url('../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'open_sansregular';
-    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-regular-webfont.woff') format('woff');
+    font-family: 'ibm_plex_monoregular';
+    src: url('../fonts/ibmplexmono-regular-webfont.woff2') format('woff2'),
+         url('../fonts/ibmplexmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweatherregular';
+    src: url('../fonts/merriweather-regular-webfont.woff2') format('woff2'),
+         url('../fonts/merriweather-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-  font-family: 'crimson_textregular', serif;
+  font-family: 'merriweatherregular', serif;
   font-size: 1rem;
-  color: #303030;
-  background-image: url("../images/background.jpg");
-  background-repeat: repeat;
+  color: #141414;
   margin: 0;
 }
 
@@ -44,16 +50,16 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6, .page-links, nav {
-  font-family: 'open_sansregular', sans-serif;
+  font-family: 'montserratregular', sans-serif;
 }
 
 a {
-  color: #568203;
+  color: #c6deec;
   text-decoration: none;
 }
 
 a:hover {
-  color: #8fbe36;
+  color: #d0bfd9;
 }
 
 /*
@@ -63,69 +69,52 @@ Homepage
 */
 
 main.homepage {
-  justify-content: center;
-  align-items: center;
-  margin-top: 10rem;
+  position: relative;
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/website_homepage_bg.jpg");
+  background-position: center left;
+  background-size: cover;
 }
 
-main.homepage > .profile {
-  display: block;
-  width: 250px;
-  height: 250px;
-  border: 5px solid #303030;
-  border-radius: 150px;
-  background-image: url("../images/profile.jpg");
-  background-position: center;
-  background-size: 100%;
-  transition: all ease-in-out 0.5s;
-}
-
-main.homepage > .profile:hover {
-  background-size: 125%;
-}
-
-main.homepage > .profile #page-link {
-  display: inline-flex;
-  width: 100%;
-  height: 100%;
-  border-radius: calc(50% - 5px);
-  justify-content: center;
-  align-items: center;
-  color: transparent;
-  text-transform: uppercase;
-  transition: all ease-in-out 0.5s;
-}
-
-main.homepage > .profile #page-link:hover {
-  background: rgba(89, 89, 89, 0.5);
-  color: #E4DDDD;
-}
-
-main.homepage #navigation {
+main.homepage > #content {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+  position: absolute;
+  bottom: 23%;
+  left: 33%;
 }
 
-main.homepage #navigation > .page-links {
-  display: block;
-  flex-basis: 15%;
-  padding: 1rem;
-  border: 3px solid #303030;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  text-align: center;
-  color: #303030;
-  text-transform: uppercase;
+main.homepage #title {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  font-size: 3rem;
+  font-stretch: semi-expanded;
+  text-shadow: 1px 0px 1px white, 2px 0px 1px white, 3px 0px 1px white, 4px 0px 1px white, -1px 0px 1px white, -2px 0px 1px white, -3px 0px 1px white, -4px 0px 1px white, 0px 1px 1px white, 0px 2px 1px white, 0px 3px 1px white, 0px 4px 1px white, 0px -1px 1px white, 0px -2px 1px white, 0px -3px 1px white, 0px -4px 1px white;
+}
+
+main.homepage #message {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  font-family: 'ibm_plex_monoregular';
+}
+
+main.homepage #button {
+  margin-left: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.25rem;
+  border: 3px solid #a0b894;
+  border-radius: 0.25rem;
+  color: #a0b894;
   transition: all ease-in-out 0.5s;
 }
 
-main.homepage #navigation > .page-links:hover {
-  background-color: #303030;
-  color: #E4DDDD;
+main.homepage #button:hover {
+  color: #f2f2f2;
+  background-color: #a0b894;
 }
 
 /*
@@ -295,66 +284,50 @@ Responsive Styling
 =============================================================================
 */
 
-@media screen and (max-width: 600px) {
-  main {
-    padding-left: 5vw;
-    padding-right: 5vw;
+@media screen and (max-aspect-ratio 16/9) {
+  main.homepage #message {
+    text-align: right;
   }
+}
 
+@media screen and (max-aspect-ratio: 1/1) {
   main.homepage {
-    height: 100vh;
-    margin-top: 0;
-    justify-content: center;
-    align-items: center;
+    background-position: 23% ;
   }
 
-  main.homepage > .profile {
-    width: calc(50vw - 5px);
-    height: calc(50vw - 5px);
-    border: 5px solid #303030;
-    border-radius: 50vw;
+  main.homepage > #content {
+    display: block;
+    top: 23%;
+    left: 40%;
   }
 
-  main.homepage > .profile:hover {
-    background-size: 100%;
+  main.homepage #title {
+    word-spacing: 100vw;
   }
 
-  main.homepage > .profile #page-link {
-    width: calc(50vw - 5px);
-    height: calc(50vw - 5px);
-    border-radius: 50vw;
-    transition: none;
+  main.homepage #message {
+    text-align: left;
   }
 
-  main.homepage #navigation {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
+  main.homepage #button {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+    margin-left: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
   }
+}
 
-  main.homepage #navigation > .page-links {
-    flex-basis: 15%;
-    padding: 1rem;
-    border: 3px solid #303030;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    transition: none;
+@media screen and (max-aspect-ratio: 3/4) {
+  main.homepage #button {
+    margin-left: 25%;
   }
+}
 
-  main.homepage > footer .external-links > a {
-    flex-wrap: wrap;
-    border-radius: 8px;
-    font-size: 1.5rem;
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
-    transition: none;
-  }
-
-  main.homepage > footer #message {
-    font-size: 0.75rem;
-  }
-
+@media screen and (max-width: 600px) {
   header > nav#main-navigation {
     flex-direction: column;
     margin-bottom: 0;
