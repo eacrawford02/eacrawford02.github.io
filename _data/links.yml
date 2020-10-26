@@ -1,8 +1,8 @@
-- title: Home
+- title: esc
   url: /
+- title: Blog
+  url: /pages/blog.html
 - title: About
   url: /pages/about.html
 - title: CV
   url: /assets/pdfs/resume.pdf
-- title: Blog
-  url: /pages/blog.html

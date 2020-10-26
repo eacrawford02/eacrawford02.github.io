@@ -11,42 +11,48 @@ title: Blog
     {% assign counter = -1 %}
 
     {% for post in sorted_posts %}
-    {% if counter == -1 %}
-    <div class="new-year">
-      <h2>{{ post.date | date: "%Y" }}</h2>
-      <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
-      <div class="date">
-        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-          <h3>{{ post.date | date: "%-d %B" }}</h3>
-        </time>
-      </div>
-    </div>
-    {% else %}
-    {% assign current_year = post.date | date: "%Y" %}
-    {% assign prev_year = sorted_posts[counter].date | date: "%Y" %}
-    {% if current_year != prev_year %}
-    <div class="new-year">
-      <h2>{{ post.date | date: "%Y" }}</h2>
-      <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
-      <div class="date">
-        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-          <h3>{{ post.date | date: "%-d %B" }}</h3>
-        </time>
-      </div>
-    </div>
-    {% else %}
-    <div class="current-year">
-      <h2>{{ post.date | date: "%Y" }}</h2>
-      <a href="{{ post.url | remove_first: '/' | absolute_url }}"><h4>{{ post.title }}</h4></a>
-      <div class="date">
-        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
-          <h3>{{ post.date | date: "%-d %B" }}</h3>
-        </time>
-      </div>
-    </div>
-    {% endif %}
-    {% endif %}
-    {% assign counter = counter | plus: 1 %}
+      {% if counter == -1 %}
+        <div class="new-year">
+          <h2>{{ post.date | date: "%Y" }}</h2>
+          <a href="{{ post.url | remove_first: '/' | absolute_url }}">
+            <h4>{{ post.title }}</h4>
+          </a>
+          <div class="date">
+            <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+              <h3>{{ post.date | date: "%-d %B" }}</h3>
+            </time>
+          </div>
+        </div>
+      {% else %}
+        {% assign current_year = post.date | date: "%Y" %}
+        {% assign prev_year = sorted_posts[counter].date | date: "%Y" %}
+        {% if current_year != prev_year %}
+          <div class="new-year">
+            <h2>{{ post.date | date: "%Y" }}</h2>
+            <a href="{{ post.url | remove_first: '/' | absolute_url }}">
+              <h4>{{ post.title }}</h4>
+            </a>
+            <div class="date">
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                <h3>{{ post.date | date: "%-d %B" }}</h3>
+              </time>
+            </div>
+          </div>
+        {% else %}
+          <div class="current-year">
+            <h2>{{ post.date | date: "%Y" }}</h2>
+            <a href="{{ post.url | remove_first: '/' | absolute_url }}">
+              <h4>{{ post.title }}</h4>
+            </a>
+            <div class="date">
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                <h3>{{ post.date | date: "%-d %B" }}</h3>
+              </time>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+      {% assign counter = counter | plus: 1 %}
     {% endfor %}
   </section>
 </main>

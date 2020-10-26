@@ -38,7 +38,7 @@ body {
 body > #line {
   width: 100%;
   height: 0;
-  border-top: 5px solid #303030;
+  border-top: 5px solid #A0B894;
 }
 
 main {
@@ -125,21 +125,7 @@ Header & Navigation
 
 header > nav#main-navigation {
   display: flex;
-  width: 100%;
   margin-bottom: 2rem;
-}
-
-header > nav#main-navigation > #profile {
-  display: block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  border: none;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-image: url("../images/profile.jpg");
-  background-position: center;
-  background-size: 100%;
 }
 
 header > nav#main-navigation > #page-links {
@@ -151,29 +137,41 @@ header > nav#main-navigation > #page-links {
 header > nav#main-navigation > #page-links > a {
   display: block;
   flex-basis: 10%;
-  margin-left: 1rem;
-  margin-top: -0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -1px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  padding-top: 3.5rem;
-  border-bottom: 2px solid #303030;
-  border-radius: 0 0 0.4rem 0.4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-right: 1px solid #595959;
   text-align: center;
-  color: #303030;
+  color: #141414;
   text-transform: uppercase;
   transition: all ease-in-out 0.3s;
 }
 
-header > nav#main-navigation > #page-links > a:hover {
-  background-color: #303030;
-  color: #E4DDDD;
-  border-bottom: none;
-  transform: translateY(0.5rem);
+header > nav#main-navigation > #page-links > a.lastTab {
+  border-right: none;
+}
+
+header > nav#main-navigation > #page-links > a.bordered:hover {
+  background-color: #E9E9EC;
+  border-right: 1px solid #F2F2F2;
+}
+
+header > nav#main-navigation > #page-links > a.firstTab:hover {
+  background-color: #D27988;
+  border-right: 1px solid #D27988;
+}
+
+header > nav#main-navigation > #page-links > a.lastTab:hover {
+  background-color: #E9E9EC;
 }
 
 header > nav#main-navigation > #page-links > a.current-page {
-  background-color: #303030;
-  color: #E4DDDD;
+  background-color: #A0B894;
+  border-right: 1px solid #A0B894
 }
 
 /*
@@ -202,7 +200,7 @@ main.blog > section.post-list > div {
 }
 
 main.blog > section.post-list > div.new-year {
-  border-top: 1px solid #303030;
+  border-top: 1px solid #141414;
 }
 
 main.blog > section.post-list > div.current-year {
@@ -231,7 +229,7 @@ Footer
 */
 
 footer {
-  font-family: 'open_sansregular', sans-serif;
+  font-family: 'ibm_plex_monoregular';
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -244,7 +242,7 @@ footer .external-links > a {
   display: inline-block;
   border-radius: 8px;
   font-size: 20px;
-  color: #303030;
+  color: #141414;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -255,26 +253,6 @@ footer .external-links > a:hover {
 
 footer > #message {
   font-size: 0.75rem;
-  color: #595959;
-}
-
-main.homepage > footer .external-links > a {
-  display: inline-block;
-  border-radius: 8px;
-  font-size: 40px;
-  color: #303030;
-  margin-left: 10px;
-  margin-right: 10px;
-  transition: all ease-in-out 0.5s;
-}
-
-main.homepage > footer .external-links > a:hover {
-  background-color: #303030;
-  color: #E4DDDD;
-}
-
-main.homepage > footer #message {
-  font-size: 1rem;
   color: #595959;
 }
 
@@ -327,20 +305,22 @@ Responsive Styling
   }
 }
 
+@media screen and (max-aspect-ratio: 5/11) {
+  main.homepage #title {
+    font-size: 2em;
+  }
+
+  main.homepage #message {
+    font-size: 1em;
+  }
+}
+
 @media screen and (max-width: 600px) {
   header > nav#main-navigation {
     flex-direction: column;
     margin-bottom: 0;
     align-items: center;
     justify-content: center;
-  }
-
-  header > nav#main-navigation > #profile {
-    width: 25vw;
-    height: 25vw;
-    border-radius: 12.5vw;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
   }
 
   header > nav#main-navigation > #page-links {
@@ -358,17 +338,27 @@ Responsive Styling
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     padding: 0.5rem;
-    border: 2px solid #303030;
+    border: 2px solid #141414;
     border-radius: 0.4rem;
     text-align: center;
-    color: #303030;
+    color: #141414;
     text-transform: uppercase;
-    transform: none !important;
   }
 
-  header > nav#main-navigation > #page-links > a:hover {
-    background-color: #303030;
-    color: #E4DDDD;
-    border-bottom: none;
+  header > nav#main-navigation > #page-links > a.lastTab {
+    border-right: 2px solid #141414;
+  }
+
+  header > nav#main-navigation > #page-links > a.bordered:hover {
+    border-right: 2px solid #141414;
+  }
+
+  header > nav#main-navigation > #page-links > a.firstTab:hover {
+    border-right: 2px solid #141414;
+  }
+
+  header > nav#main-navigation > #page-links > a.current-page {
+    background-color: #A0B894;
+    border-right: 2px solid #141414;
   }
 }
