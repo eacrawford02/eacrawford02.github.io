@@ -21,9 +21,9 @@ Global Styles
 }
 
 @font-face {
-    font-family: 'merriweatherregular';
-    src: url('../fonts/merriweather-regular-webfont.woff2') format('woff2'),
-         url('../fonts/merriweather-regular-webfont.woff') format('woff');
+    font-family: 'crimson_textregular';
+    src: url('../fonts/crimsontext-regular-webfont.woff2') format('woff2'),
+         url('../fonts/crimsontext-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
