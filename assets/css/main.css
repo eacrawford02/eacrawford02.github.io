@@ -137,7 +137,7 @@ header > nav#main-navigation > #page-links {
 header > nav#main-navigation > #page-links > a {
   display: block;
   flex-basis: 10%;
-  margin-top: 1rem;
+  margin-top: -0.5px;
   margin-bottom: 1rem;
   margin-left: -1px;
   padding-left: 0.5rem;
