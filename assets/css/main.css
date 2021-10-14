@@ -306,6 +306,7 @@ Responsive Styling
   }
 }
 
+/* Used to avoid obscuring text with background */
 @media screen and (max-aspect-ratio: 208/153) {
   main.homepage #message {
     text-align: left;
@@ -349,18 +350,36 @@ Responsive Styling
   }
 }
 
-@media screen and (max-aspect-ratio: 5/11) {
+/* Phone screen sizes */
+@media screen and (max-aspect-ratio: 6/10) {
   main.homepage #title {
-    font-size: 2em;
+    font-size: 2rem;
   }
 
   main.homepage #message {
-    font-size: 1em;
+    font-size: 1rem;
+  }
+
+  main.homepage #button {
+    width: 50%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-width: 3px;
+    font-size: 1rem;
+  }
+
+  main.blog > section.post-list > div > a {
+    padding-left: 1rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   main.homepage > #content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  main.container {
     margin-left: 1rem;
     margin-right: 1rem;
   }
