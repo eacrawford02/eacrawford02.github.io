@@ -88,7 +88,7 @@ main.homepage > #content {
 main.homepage #title {
   margin-top: 1rem;
   margin-bottom: 0rem;
-  font-size: 3rem;
+  font-size: 4.5rem;
   font-stretch: semi-expanded;
   text-shadow: 1px 0px 1px white, 2px 0px 1px white, 3px 0px 1px white, 4px 0px 1px white, -1px 0px 1px white, -2px 0px 1px white, -3px 0px 1px white, -4px 0px 1px white, 0px 1px 1px white, 0px 2px 1px white, 0px 3px 1px white, 0px 4px 1px white, 0px -1px 1px white, 0px -2px 1px white, 0px -3px 1px white, 0px -4px 1px white;
 }
@@ -98,16 +98,19 @@ main.homepage #message {
   margin-bottom: 1rem;
   text-align: right;
   font-family: 'ibm_plex_monoregular';
+  font-size: 1.76rem;
 }
 
 main.homepage #button {
-  margin-left: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 0.25rem;
-  border: 3px solid #a0b894;
-  border-radius: 0.25rem;
+  margin-left: 3rem;
+  margin-right: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.38rem;
+  border: 4.5px solid #a0b894;
+  border-radius: 0.38rem;
+  font-size: 1.5rem;
   color: #a0b894;
   transition: all ease-in-out 0.5s;
 }
@@ -287,6 +290,22 @@ Responsive Styling
 =============================================================================
 */
 
+/* Scale down when windows zoom level is 125% */
+@media (min-resolution: 1.25dppx) and (max-resolution: 1.5dppx) {
+  main.homepage > #content {
+    transform: scale(calc(1/1.25));
+    transform-origin: bottom left;
+  }
+}
+
+/* Scale down when windows zoom level is 150% */
+@media (min-resolution: 1.5dppx) and (max-resolution: 2dppx) {
+  main.homepage > #content {
+    transform: scale(calc(1/1.5));
+    transform-origin: bottom left;
+  }
+}
+
 @media screen and (max-aspect-ratio: 208/153) {
   main.homepage #message {
     text-align: left;
@@ -341,7 +360,7 @@ Responsive Styling
 }
 
 @media screen and (max-width: 600px) {
-  main {
+  main.homepage > #content {
     margin-left: 1rem;
     margin-right: 1rem;
   }
