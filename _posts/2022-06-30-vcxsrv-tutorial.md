@@ -22,7 +22,8 @@ Alternatively, run `ipconfig` from the host machine command prompt and locate th
 We can then export this address as an environment variable for reference in the current session:
 
 ```
-export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0 # ':0' denotes that this is display number 0 (the first)
+# ':0' denotes that this is display number 0 (the first)
+export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0
 ```
 
 This variable will be used to tell an application (on our Linux distro) how to connect to an X server (on our host).
@@ -97,7 +98,7 @@ Click ok to save the changes (and feel free to change the shortcut name to somet
 
 ## 7. Configure Windows Firewall
 
-The last step involved in setting up VcXsrv is to allow for traffic from WSL to pass through the firewall. This is necessary because we are communicating with the host via its network interface, so from the host's perspective, this traffic will appear to be coming from another machine on the network. Windows Firewall will block this automatically, so we must create an **inbound rule** to override this. We want to configure this rule for **TCP** traffic over the **specific local port 6000**. To limit the **scope** of the rule (so that only our Linux distro can communicate with the server and not the entire internet--this is *very* important), we'll only allow the remote IP addresses of the subnets used by WSL2. These are "172.16.0.0/12" and "192.168.0.0/16". Note that this should be the only rule associated with VcXsrv; if there other rules are present in the inbound rules list within the firewall (e.g., "VcXsrv windows xserver"), make sure they are disabled. For a detailed walkthrough of setting up the firewall rule, give the following article a read: (https://skeptric.com/wsl2-xserver/)[https://skeptric.com/wsl2-xserver/].
+The last step involved in setting up VcXsrv is to allow for traffic from WSL to pass through the firewall. This is necessary because we are communicating with the host via its network interface, so from the host's perspective, this traffic will appear to be coming from another machine on the network. Windows Firewall will block this automatically, so we must create an **inbound rule** to override this. We want to configure this rule for **TCP** traffic over the **specific local port 6000**. To limit the **scope** of the rule (so that only our Linux distro can communicate with the server and not the entire internet--this is *very* important), we'll only allow the remote IP addresses of the subnets used by WSL2. These are "172.16.0.0/12" and "192.168.0.0/16". Note that this should be the only rule associated with VcXsrv; if there other rules are present in the inbound rules list within the firewall (e.g., "VcXsrv windows xserver"), make sure they are disabled. For a detailed walkthrough of setting up the firewall rule, give the following article a read: [https://skeptric.com/wsl2-xserver/](https://skeptric.com/wsl2-xserver/).
 
 ## Further Reading
 
