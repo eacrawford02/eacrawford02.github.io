@@ -1,9 +1,9 @@
 - name: Email
   link: mailto:eacrawford02@gmail.com
   icon: far fa-envelope fa-fw
-- name: Instagram
-  link: https://www.instagram.com/eacrawford02/
-  icon: fab fa-instagram fa-fw
+- name: LinkedIn
+  link: https://www.linkedin.com/in/ewen-crawford-5796b8164/
+  icon: fab fa-linkedin fa-fw
 - name: Github
   link: https://github.com/eacrawford02
   icon: fab fa-github fa-fw
