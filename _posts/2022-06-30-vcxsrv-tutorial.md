@@ -7,17 +7,17 @@ So, you'd like to be able to run Linux GUI apps from WSL2. Unfortunately, native
 
 ## 1. Install VcXsrv
 
-Download the VcXsrv program from [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/) and follow the installation wizard.
+Download the VcXsrv program onto your host machine from [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/) and follow the installation wizard.
 
 ## 2. Obtain host IP address
 
-We start by obtaining the host IP address. This belongs to the network adapter that allows for the host machine to connect to the internet, the IP address of which can be obtained by running the following command in bash:
+We start by obtaining the host IP address from within WSL. This belongs to the network adapter that allows for the host machine to connect to the internet, the IP address of which can be obtained by running the following command in bash:
 
 ```
 route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'
 ```
 
-Alternatively, run `ipconfig` from the host machine command prompt and locate the IPv4 address under whatever your built-in network adapter is (i.e., wireless LAN, ethernet, **not** the WSL vEthernet virtual adapter).
+Alternatively, run `ipconfig` from the host machine's command prompt and locate the IPv4 address under whatever your built-in network adapter is (i.e., wireless LAN, ethernet, **not** the WSL vEthernet virtual adapter).
 
 We can then export this address as an environment variable for reference in the current session:
 
