@@ -58,7 +58,7 @@ We then associate the cookie with the display (using "." to specify the MIT-MAGI
 xauth add "$DISPLAY" . "$magiccookie"
 ```
 
-To verify that the entry was successfully added, run the same `xauth list` command again--it should print the entry. For more information on the xauth command, refer to [https://www.ibm.com/docs/en/aix/7.2?topic=x-xauth-command](https://www.ibm.com/docs/en/aix/7.2?topic=x-xauth-command).
+To verify that the entry was successfully added, run the same `xauth list` command again--it should print the entry. For more information on the xauth command, refer to [https://www.ibm.com/docs/en/aix/7.2?topic=x-xauth-command](https://www.ibm.com/docs/en/aix/7.2?topic=x-xauth-command). Note that a new xauth entry must be added to the authorization file whenever the host address changes (such as when connecting to a new router).
 
 Now that the .Xauthority authorization file has been edited, we can copy it into the host's UserProfile folder (which we grab using cmd.exe):
 
@@ -74,7 +74,7 @@ To ensure that this was successful, check your userprofile folder (in C:\\Users\
 To export both the display and authorization file environment variables on shell startup, add their respective export command to ~/.bashrc in your Linux distro:
 
 ```
-echo "export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.0" >> ~/.bashrc
+echo 'export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '"'"'{print $4}'"'"'):0.0' >> ~/.bashrc
 echo "export XAUTHORITY=~/.Xauthority" >> ~/.bashrc
 ```
 
