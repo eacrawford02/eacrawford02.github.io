@@ -11,10 +11,8 @@ GEM
     eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     ffi (1.15.5)
-    ffi (1.15.5-x64-mingw32)
     forwardable-extended (2.6.0)
     google-protobuf (3.21.12)
-    google-protobuf (3.21.12-x64-mingw32)
     http_parser.rb (0.8.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -60,6 +58,8 @@ GEM
     sass-embedded (1.57.1)
       google-protobuf (~> 3.21)
       rake (>= 10.0.0)
+    sass-embedded (1.57.1-x64-mingw-ucrt)
+      google-protobuf (~> 3.21)
     sass-embedded (1.57.1-x64-mingw32)
       google-protobuf (~> 3.21)
     terminal-table (3.0.2)
@@ -69,10 +69,12 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw-ucrt
   x64-mingw32
 
 DEPENDENCIES
   jekyll
+  webrick (~> 1.7)
 
 BUNDLED WITH
-   2.1.4
+   2.4.17
