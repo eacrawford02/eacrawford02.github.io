@@ -20,7 +20,10 @@
         {% else %}
           {% assign class = "bordered" %}
         {% endif %}
-        {% if item.url == cv %}
+        {% if item.url == "/assets/pdfs/resume.pdf" %}
+          {% comment %}
+            Open resume pdf file in a new tab (given by target attribute)
+          {% endcomment %}
           <a href="{{ item.url }}" title="{{ item.title }}" target="_blank"
               class="{{ class }}">
             {{ item.title }}
