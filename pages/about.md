@@ -9,7 +9,7 @@ layout: page
 
   <div id="text">
     <p>
-      Hi, I'm Ewen Crawford, and I'm currently a third year computer engineering student at Queen's University. I have a passion for both hardware and software, often finding myself at the intersection between the two fields of study. My current interests lie within the realm of digital design, specifically developing for FPGAs, although I have dabbled in graphics programming and app development in the past.
+      Hi, I'm Ewen Crawford, and I'm currently a fourth year computer engineering student at Queen's University. I have a passion for both hardware and software, often finding myself at the intersection between the two fields of study. My current interests lie within the realm of digital design, specifically developing for FPGAs, although I have dabbled in graphics programming and app development in the past.
     </p>
     <p>
       I firmly believe that it is better to do something right once rather than poorly twice, and I try to express this principle in the work that I produce. As such, I aim for my writing, my code, and my designs to be concise, structured, and well thought out.
