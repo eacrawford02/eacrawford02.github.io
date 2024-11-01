@@ -8,4 +8,4 @@ gem "jekyll"
 
 # gem "rails"
 
-gem "webrick", "~> 1.8"
+gem "webrick", "~> 1.9"
