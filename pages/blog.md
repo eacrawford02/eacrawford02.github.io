@@ -1,4 +1,4 @@
 ---
-title: Writings
+title: Blog
 layout: blog
 ---
