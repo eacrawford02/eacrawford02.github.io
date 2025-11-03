@@ -54,7 +54,7 @@ newfs_msdos -F 32 -c 1 /dev/ada0p1
 ```
 
 The above command following `gpart add` construct a MS-DOS (FAT32) file system on
-the created EFI partition, ___.
+the created EFI partition.
 
 b) For legacy boot (BIOS):
 
@@ -66,7 +66,7 @@ gpart bootcode -b /boot/pmbr -p /boot/gptzfsboot -i 1 <geom>
 The `gpart bootcode` command seen above embeds a protective MBR (the
 `/boot/pmbr` file) into the first disk sector, and then writes the bootstrap
 code (from the file `/boot/gptzfsboot`) to partition index 1. See the
-BOOTSTRAPPING section of `GPART(8)` for more information.
+"BOOTSTRAPPING" section of `GPART(8)` for more information.
 
 Add a swap partition (in this case, 4 GB in size):
 
@@ -107,7 +107,7 @@ The default filesystem structure created by the FreeBSD installer is a "shallow"
 boot environment, where a boot environment parent dataset is created under the
 root of the ZFS filesystem (e.g., `zroot`) and boot environment datasets are
 placed under this parent. The boot environment datasets themselves do not have
-any directly subordinate datasets (see the "Boot Environment Structures section
+any directly subordinate datasets (see the "Boot Environment Structures" section
 of `BECTL(8)` for more information). This layout is also expected by the `bectl`
 tool, so we will adhere to it.
 
