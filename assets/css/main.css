@@ -235,6 +235,8 @@ main.blog > section.post-list > div.current-year {
 main.blog > section.post-list > div > .date {
   display: block;
   flex-grow: 0;
+  flex-shrink: 0;
+  padding-left: 3rem;
 }
 
 main.blog > section.post-list > div.current-year > h2 {
