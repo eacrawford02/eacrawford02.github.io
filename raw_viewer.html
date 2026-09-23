@@ -1,0 +1,34 @@
+---
+title: Raw Viewer
+permalink: /raw-viewer/
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div id="file-contents">
+      Loading file...
+    </div>
+
+    <script>
+      // Get the file path from the URL's "file" parameter (?file=/foo/bar.baz)
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file")
+
+      fetch(file)
+	.then(response => {
+	  console.log(response);
+	  return response.text();
+	})
+	.then(data => {
+	  document.getElementById("file-contents").textContent = data;
+	})
+	.catch(error => {
+	  document.getElementById("file-contents").textContent = `Error loading file: ${error}`;
+	});
+    </script>
+  </body>
+</html>

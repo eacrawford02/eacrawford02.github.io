@@ -84,6 +84,32 @@ code.highlighter-rouge {
   background-color: #E9E9EC;
 }
 
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse
+}
+
+table thead tr {
+  border-bottom: 1px solid;
+}
+
+table th, td {
+  padding-left: 1rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+table tr :nth-child(1) {
+  padding-right: 0.5rem;
+  border-right: 1px solid
+}
+
+/* Ensure that newlines in raw file viewer are printed */
+#file-contents {
+  white-space: pre;
+}
+
 /*
 =============================================================================
 Homepage
@@ -247,6 +273,16 @@ main.blog > section.post-list > div > a {
   display: block;
   flex-grow: 1;
   padding-left: 3rem;
+}
+
+/*
+=============================================================================
+Blog Post
+=============================================================================
+*/
+
+section.post a {
+  text-decoration: underline;
 }
 
 /*
@@ -474,4 +510,28 @@ Responsive Styling
   main > #about > #text {
     width: 100%;
   }
+}
+
+/*
+=============================================================================
+Kramdown Inline Attributes
+=============================================================================
+*/
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aside {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #FFE285;
+}
+
+.aside #mono {
+  font-family: 'ibm_plex_monoregular';
 }
